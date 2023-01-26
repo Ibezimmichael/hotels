@@ -1,0 +1,25 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%include "header.html"%}
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/delete_hotel.jpg')}}')">
+        <div class="h1-div container-fluid">
+            <h1 class="">
+                Delete
+            </h1>
+            <p>
+                You can only delete this post if you have the secret key
+            </p>
+        </div>
+    </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 mx-auto">
+
+           {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "outline-primary"}) }}
+
+          </div>
+        </div>
+      </div>
+{% include "footer.html"%}
+
+

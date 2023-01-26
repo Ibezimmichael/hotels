@@ -1,0 +1,64 @@
+body {
+text-align: center;
+font-family: Montserrat-Black;
+}
+.main-nav {
+background-color: #91D8E4;
+}
+.favicon {
+vertical-align: revert;
+}
+.masthead {
+width: 100%;
+max-height: 500px;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+.h1-div {
+text-align: center;
+padding: 150px;
+color: #fff;
+}
+.hotels-topic {
+text-align: center;
+color: #91D8E4;
+}
+.hotel-name {
+color: #91D8E4;
+}
+
+
+#footer {
+text-align: center;
+background-color: #ECE8DD;
+padding: 10px;
+}
+.footer-a {
+font-size: 3rem;
+padding: 10px;
+color: #434242;
+}
+.footer-a:hover {
+color: #EAF6F6;
+}
+.footer-p {
+font-size: 7px;
+color: rgb(129, 108, 108);
+}
+.hotel-img {
+  min-height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% 100%;
+  opacity: 0.7;
+}
+a {
+text-decoration: none;
+}
+a-tag: link {
+text-decoration: none;
+color: blue;
+}

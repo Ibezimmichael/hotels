@@ -1,0 +1,57 @@
+{% include "header.html"%}
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home_hotel.jpg')}}')">
+        <div class="h1-div container-fluid">
+            <h1 class="">
+                Hotels In Festac
+            </h1>
+            <p>
+                Welcome to Mi-Dev hotel service, we offer the best hotel advice in festac to our esteemed users
+            </p>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <h2 class="hotels-topic"> Look at the best hotels in Festac </h2>
+        <div class="row">
+            {% for hotel in hotels: %}
+
+            <div class="col-md-6 ">
+                <a href="{{hotel.hotel_location}}">
+                    <img src="{{hotel.img_url}}" class="img-fluid" alt="Pic of {{hotel.name}}">
+                </a>
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="">
+                    <div class="">
+                        <h3 class="hotel-name">{{hotel.name}}</h3>
+                        {{hotel.hotel_description|safe}}
+                    </div>
+                    <div class="">
+                        <p>{{hotel.hotel_address}}</p>
+                        <ul>
+                            <li>pool : {{hotel.has_pool}}</li>
+                            <li>dining : {{hotel.has_dining}}</li>
+                            <li>wifi : {{hotel.has_wifi}}</li>
+                        </ul>
+                        <span>Starting price: ₦{{hotel.starting_price}}</span>
+                        {% if current_user.is_authenticated: %}
+                            <a href="{{url_for('edit_hotel', hotel_id=hotel.id)}}" class="a-tag">Edit hotel data</a>
+                            <a href="{{url_for('delete_hotel', hotel_id=hotel.id)}}" class="a-tag">✘</a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+
+
+{% include "footer.html"%}

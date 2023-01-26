@@ -1,0 +1,29 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% include "header.html"%}
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/add-hotel.jpg')}}')">
+        <div class="h1-div container-fluid">
+            {% if is_edit: %}
+            <h1>Edit Post</h1>
+            {% else: %}
+            <h1 class="">
+                Add hotel</h1>
+            {% endif %}
+            <p>
+                Give information of a hotel around festac axis
+            </p>
+        </div>
+    </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 mx-auto">
+           {{ ckeditor.load() }}
+           {{ ckeditor.config(name='hotel_description') }}
+           {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "outline-primary"}) }}
+
+          </div>
+        </div>
+      </div>
+
+
+{% include "footer.html"%}
