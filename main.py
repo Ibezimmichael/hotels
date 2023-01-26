@@ -10,13 +10,12 @@ from functools import wraps
 import os
 
 app = Flask(__name__)
-API_KEY = "milan1234"
-app.config['SECRET_KEY'] = os.getenv("HOTEL_APP_KEY")
-app.config['SECRET_KEY'] = "wrybwefblqoeifqpkns"
+API_KEY = os.getenv("HOTEL_API_KEY")
+app.config['SECRET_KEY'] = os.getenv("gi")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 ##Connect to Database
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', "sqlite:///blog.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', "sqlite:///hotels.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
