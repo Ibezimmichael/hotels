@@ -11,7 +11,7 @@ import os
 
 app = Flask(__name__)
 API_KEY = os.getenv("HOTEL_API_KEY")
-app.config['SECRET_KEY'] = os.getenv("gi")
+app.config['SECRET_KEY'] = os.getenv("HOTEL_APP_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 ##Connect to Database
